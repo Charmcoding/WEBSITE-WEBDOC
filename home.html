@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page d'accueil</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content .logo {
+    height: 50px;
+}
+
+.header-content .button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #033a87;
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #ffffff;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 2px solid #ffffff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #007bff;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+
+.main-content {
+    padding: 20px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.grid-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.grid-button:hover {
+    background-color: #0056b3;
+}
+
+.grid-content p {
+    display: none;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.grid-content p.active {
+    display: block;
+}
+
+</style>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="LOGO .png" alt="Logo" class="logo">
+            
+        </div>
+    </header>
+    <img src="R.jpeg">
+    <main>
+        <div class="main-content">
+            <h2>Se connecter</h2>
+            <div>
+                <div class="loginform">
+            <form action="#">
+                <div class="input-group">
+                    <label for="username">Nom d'utilisateur</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Mot de passe</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Se connecter</button>
+
+            </form>
+                </div>
+        </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+

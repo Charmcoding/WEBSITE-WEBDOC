@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interface Radiologue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      padding: 10px 0;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    nav ul li {
+      display: inline;
+      margin: 0 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 0 20px;
+    }
+
+    .signup-form, .diagnosis {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .signup-form h2, .diagnosis h2 {
+      margin-bottom: 20px;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .input-group input, .input-group textarea, .input-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Acceuil</a></li>
+        <li><a href="#">Patients</a></li>
+        <li><a href="#">Segmenter</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1>Bonjour,radiologue </h1>
+
+    <div class="diagnosis">
+      <h2>Diagnosic</h2>
+      <form action="#">
+        <div class="input-group">
+          <label for="diagnosis">Entrer votre Diagnostic</label>
+          <label>entrer le nom du patient </label>
+          <textarea id="diagnosis" name="Patient" rows="4" required> nom du Patient </textarea>
+          <textarea id="diagnosis" name="diagnosis" rows="4" required></textarea>
+        </div>
+        <button type="submit">soummetre le diagnostic </button>
+        <div class="input-group">
+          <label for="file">Charger IRM Image</label>
+          <input type="file" id="file" name="file" accept="image/*" required>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+          
+  
+

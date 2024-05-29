@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSEP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #033a87;
+            color: white;
+        }
+
+        header {
+            background-color: #333;
+            padding: 3pt;
+            text-align: left;
+            color: white;
+            font-size: 3pt;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2f59d7; /* Updated background color */
+            padding: 10px;
+            position: relative;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            margin: 0 15px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav a:hover,
+        nav a:active,
+        nav a:focus {
+            color: cyan;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: none;
+            position: absolute;
+            background-color: #033a87; 
+            left: 0;
+            width: 100%;
+            top: 100%;
+        }
+
+        nav li:hover > ul {
+            display: block;
+        }
+
+        nav ul li {
+            float: none;
+            display: list-item;
+            position: relative;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #033a87;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .logout-btn {
+            color: white;
+            background-color: #333;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .logout-btn:hover {
+            background-color: #555;ee
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>you are admin Welcome</h1>
+        <button class="logout-btn">Log Out</button>
+
+    </header>
+
+    <nav>
+        <a href="Admin.html">Welcome</a>
+        <a href="">Gestion Radiologue</a>
+        <a href="">Gestion Medecin</a>
+        <a href="Patient">liste Patient </a>
+        <a href="En_attente.html">en attente</a>
+       
+    </nav>
+
+    <section>
+        <h2>Welcome Administrator </h2>
+      
+    </section>
+
+    <footer >
+        &copy;SEPWEB
+    </footer>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js"></script>
+  <script>
+    
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+
+    const db = firebase.firestore();
+
+    const diagnosisForm = document.getElementById('diagnosisForm');
+    const diagnosisList = document.getElementById('diagnosisList');
+
+    diagnosisForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const diagnosis = diagnosisForm['diagnosis'].value;
+      const file = diagnosisForm['file'].files[0];
+
+      // Upload the image file to Firebase Storage
+      const storageRef = firebase.storage().ref('images/' + file.name);
+      storageRef.put(file).then(() => {
+        console.log('Image uploaded successfully');
+        
+        // Get the download URL for the uploaded image
+        storageRef.getDownloadURL().then((imageUrl) => {
+          console.log('Image URL:', imageUrl);
+
+          // Save diagnosis and image URL to Firestore
+          db.collection("diagnosis").add({
+            diagnosis: diagnosis,
+            imageUrl: imageUrl
+          }).then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
+
+            // Clear the form after submitting
+            diagnosisForm.reset();
+          }).catch((error) => {
+            console.error("Error adding document: ", error);
+          });
+        }).catch((error) => {
+          console.error("Error getting download URL: ", error);
+        });
+      }).catch((error) => {
+        console.error("Error uploading image: ", error);
+      });
+    });
+
+    // Display diagnosis data from Firestore
+    db.collection("diagnosis").onSnapshot((querySnapshot) => {
+      diagnosisList.innerHTML = "";
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const diagnosisItem = document.createElement('div');
+        diagnosisItem.innerHTML = `
+          <p><strong>Diagnosis:</strong> ${data.diagnosis}</p>
+          <img src="${data.imageUrl}" alt="MRI Image" style="max-width: 100%;">
+          <hr>
+        `;
+        diagnosisList.appendChild(diagnosisItem);
+      });
+    });
+  </script>
+
+   
+
+</body>
+</html>
