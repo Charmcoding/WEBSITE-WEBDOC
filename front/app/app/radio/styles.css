@@ -1,0 +1,14 @@
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 173, 216, 230;
+    --background-end-rgb: 173, 216, 230;
+}
+
+
+  body {
+    font-family: var(--font-inter), sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-inter), sans-serif;
+  }
