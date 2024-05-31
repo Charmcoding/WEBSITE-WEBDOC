@@ -8,9 +8,23 @@ export default function Tool() {
   return (
     <div key="1" className="flex flex-col h-screen">
 
-      <h1 className="text-xl font-bold mb-4 text-center py-4 bg-gray-50 border-b border-gray-200">
-        Diagnostic
-        </h1>
+            <header className="bg-gray-900 text-white py-4 px-6">
+        <div className="container mx-auto flex justify-between items-center">
+          <Link href="#" className="hover:text-gray-400" prefetch={false}>
+            <ArrowLeftIcon className="h-6 w-6" />
+            <span className="sr-only">Go Back</span>
+          </Link>
+          <div className="flex items-center space-x-4">
+            <h1 className="text-2xl font-bold">Diagnostic Patient Amel</h1>
+          </div>
+          <Link href="#" className="hover:text-gray-400" prefetch={false}>
+            <LogOutIcon className="h-6 w-6" />
+            <span className="sr-only">Logout</span>
+          </Link>
+        </div>
+      </header>
+      
+
 
       <main className="flex-1 py-8 px-6">
         <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -91,7 +105,50 @@ export default function Tool() {
   )
 }
 
-function UploadIcon(props : React.SVGProps<SVGSVGElement>) {
+function ArrowLeftIcon(props : any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="m12 19-7-7 7-7" />
+      <path d="M19 12H5" />
+    </svg>
+  )
+}
+
+
+function LogOutIcon(props : any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+      <polyline points="16 17 21 12 16 7" />
+      <line x1="21" x2="9" y1="12" y2="12" />
+    </svg>
+  )
+}
+
+
+function UploadIcon(props : any) {
   return (
     <svg
       {...props}

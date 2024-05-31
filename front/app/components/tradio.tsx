@@ -6,6 +6,9 @@ import { Button } from "@/components/ui/button"
 export function TRadio() {
   return (
     <div className="border rounded-lg w-full">
+
+
+
       <div className="relative w-full overflow-auto">
         <Table>
           <TableHeader>
@@ -33,7 +36,7 @@ export function TRadio() {
               </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline">
-                  Update
+                  Add Treatment
                 </Button>
               </TableCell>
             </TableRow>
@@ -51,7 +54,7 @@ export function TRadio() {
               </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline">
-                  Update
+                  Add Treatment
                 </Button>
               </TableCell>
             </TableRow>
@@ -69,7 +72,7 @@ export function TRadio() {
               </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline">
-                  Update
+                  Add Treatment
                 </Button>
               </TableCell>
             </TableRow>
@@ -87,7 +90,7 @@ export function TRadio() {
               </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline">
-                  Update
+                  Add Treatment
                 </Button>
               </TableCell>
             </TableRow>
@@ -105,7 +108,7 @@ export function TRadio() {
               </TableCell>
               <TableCell>
                 <Button size="sm" variant="outline">
-                  Update
+                  Add Treatment
                 </Button>
               </TableCell>
             </TableRow>

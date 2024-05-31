@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 
 export default function Admin() {
   return (
+
     <main className="bg-white container mx-auto px-4 py-8 md:px-6 lg:px-8">
       <div className="grid gap-8 lg:grid-cols-3">
         <section>
@@ -14,23 +15,20 @@ export default function Admin() {
             </Button>
           </div>
           <div className="divide-y divide-gray-200 ">
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+            <div className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-8 py-4">
+              
               <div className="font-medium">ID</div>
               <div className="font-medium">Name</div>
-              <div className="flex gap-2">
-                <Button size="icon" className="bg-white">
-                  <DeleteIcon className="h-4 w-4" />
-                  <span className="sr-only">Edit</span>
-                </Button>
-                <Button size="icon" className="bg-white">
-                  <TrashIcon className="h-4 w-4" />
-                  <span className="sr-only">Delete</span>
-                </Button>
-              </div>
+              <div className="font-medium">Status</div>
+              <div className="font-medium">Actions</div>
+
             </div>
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+            <div className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 py-4">
               <div>1234</div>
               <div>John Doe</div>
+              <div className="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">
+                Pending
+              </div>
               <div className="flex gap-2">
                 <Button size="icon" className="bg-white">
                   <DeleteIcon className="h-4 w-4" />
@@ -42,9 +40,12 @@ export default function Admin() {
                 </Button>
               </div>
             </div>
-            <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+            <div className="grid grid-cols-[auto_1fr_auto_auto] items-center gap-4 py-4">
               <div>5678</div>
               <div>Jane Smith</div>
+              <div className="bg-green-500 text-white px-2 py-1 rounded-full text-xs">
+                Done
+              </div>
               <div className="flex gap-2">
                 <Button size="icon" className="bg-white">
                   <DeleteIcon className="h-4 w-4" />
@@ -68,18 +69,11 @@ export default function Admin() {
           </div>
           <div className="divide-y divide-gray-200">
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+              
               <div className="font-medium">ID</div>
               <div className="font-medium">Name</div>
-              <div className="flex gap-2">
-                <Button size="icon" className="bg-white">
-                  <DeleteIcon className="h-4 w-4" />
-                  <span className="sr-only">Edit</span>
-                </Button>
-                <Button size="icon" className="bg-white">
-                  <TrashIcon className="h-4 w-4" />
-                  <span className="sr-only">Delete</span>
-                </Button>
-              </div>
+              <div className="font-medium">Actions</div>
+
             </div>
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
               <div>1</div>
@@ -121,18 +115,11 @@ export default function Admin() {
           </div>
           <div className="divide-y divide-gray-200">
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
+              
               <div className="font-medium">ID</div>
               <div className="font-medium">Name</div>
-              <div className="flex gap-2">
-                <Button size="icon" className="bg-white">
-                  <DeleteIcon className="h-4 w-4" />
-                  <span className="sr-only">Edit</span>
-                </Button>
-                <Button size="icon" className="bg-white">
-                  <TrashIcon className="h-4 w-4" />
-                  <span className="sr-only">Delete</span>
-                </Button>
-              </div>
+              <div className="font-medium">Actions</div>
+
             </div>
             <div className="grid grid-cols-[auto_1fr_auto] items-center gap-4 py-4">
               <div>9012</div>
@@ -166,6 +153,7 @@ export default function Admin() {
         </section>
       </div>
     </main>
+    
   )
 }
 

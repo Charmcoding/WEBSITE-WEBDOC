@@ -1,4 +1,4 @@
-import {TRadio} from "../../components/tradio";
+import { TRadio } from "../../components/tradio";
 
 export default function Home() {
   return (
