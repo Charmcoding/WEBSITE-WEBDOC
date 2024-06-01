@@ -6,8 +6,8 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image, ImageTk
 
-model_path = 'path_to_your_model.h5'
-model = load_model('') 
+model_path = '.h5'
+model = load_model('model_path') 
 def predict_image(image_path):
     image = Image.open(image_path)
     image = image.resize((150, 150))  
