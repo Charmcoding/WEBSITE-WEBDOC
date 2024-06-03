@@ -6,8 +6,8 @@ import tensorflow as tf
 from tensorflow.keras.models import load_model
 from PIL import Image, ImageTk
 
-model_path = 'https://drive.google.com/drive/u/0/my-drive/final_unet_model(2).h5'
-model = load_model('model_path') 
+
+model = load_model('final_unet_model.h5') 
 def predict_image(image_path):
     image = Image.open(image_path)
     image = image.resize((150, 150))  

@@ -11,7 +11,7 @@ class TestAIApp(unittest.TestCase):
         self.assertIsNotNone(self.app.model, "Model should be loaded")
 
     def test_image_opening(self):
-        # Simulate opening an image
+        
         self.app.open_image('patient1.jpg')
         self.assertIsNotNone(self.app.photo, "Photo should be loaded into the label")
     
@@ -25,4 +25,4 @@ class TestAIApp(unittest.TestCase):
         self.root.destroy()
 
 if __name__ == "__main__":
-    unittest.main()
+main()
